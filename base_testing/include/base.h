@@ -71,6 +71,12 @@ class BaseVelControl {
     void update();
 
 };
+extern BaseVelControl baseControl; //in initialize
 void ctrlBaseVel(void* param);
+void runVelPIDTest();
+
+//base movement functions
+void moveStraight(double dist, double maxVel = 100);
+void moveStraightVelCtrl(double dist, double maxVel = MAX_VEL, double accel = MAX_ACCEL, double startVel = 0, double endVel = 0);
 
 #endif

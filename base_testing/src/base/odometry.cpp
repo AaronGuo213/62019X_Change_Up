@@ -25,8 +25,7 @@ void Odometry::update() {
 void Odometry::startTracking() {
 
     isTracking = true;
-    Odometry* tracker = this;
-    Task trackingGo(trackPos, tracker, TASK_PRIORITY_DEFAULT, TASK_STACK_DEPTH_DEFAULT, "position tracking task");
+    Task trackingGo(trackPos, this, TASK_PRIORITY_DEFAULT, TASK_STACK_DEPTH_DEFAULT, "position tracking task");
 
 }
 
