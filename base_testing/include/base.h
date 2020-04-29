@@ -15,6 +15,7 @@ double getLeftBaseEnc();
 double getRightBaseEnc();
 double getLeftBaseRPM();
 double getRightBaseRPM();
+bool isBaseSettled();
 void resetBaseEnc();
 
 double getLeftEnc();
@@ -77,6 +78,8 @@ void runVelPIDTest();
 
 //base movement functions
 void moveStraight(double dist, double maxVel = 100);
-void moveStraightVelCtrl(double dist, double maxVel = MAX_VEL, double accel = MAX_ACCEL, double startVel = 0, double endVel = 0);
+void moveStraightVelCtrl(double dist, double maxVel = 100);
+void moveStraightMP(double dist, double maxVel = MAX_VEL, double accel = MAX_ACCEL, double startVel = 0, double endVel = 0);
+void moveCircular(double radius, bool clockwise, double centerVel);
 
 #endif

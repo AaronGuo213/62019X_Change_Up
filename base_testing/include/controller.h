@@ -1,6 +1,8 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
+int sgn(double x);
+
 double lY(Controller cont = master);
 double lX(Controller cont = master);
 double rY(Controller cont = master);

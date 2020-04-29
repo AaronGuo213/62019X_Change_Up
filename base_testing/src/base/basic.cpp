@@ -48,6 +48,12 @@ double getRightBaseRPM() {
         
 }
 
+bool isBaseSettled() {
+
+    return (getLeftBaseRPM() < 5 && getRightBaseRPM() < 5);
+
+}
+
 void resetBaseEnc() {
 
     leftBase1.tare_position();

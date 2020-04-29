@@ -1,5 +1,11 @@
 #include "main.h"
 
+int sgn(double x) {
+
+    return (x > 0) - (x < 0);
+
+}
+
 double lY(Controller cont) {
     return cont.get_analog(E_CONTROLLER_ANALOG_LEFT_Y);
 }
