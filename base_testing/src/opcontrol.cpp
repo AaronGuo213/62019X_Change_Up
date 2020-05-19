@@ -2,6 +2,12 @@
 
 void opcontrol() {
 
+    while(true) {
 
+        updateBase();
+
+        delay(50);
+
+    }
 	
 }

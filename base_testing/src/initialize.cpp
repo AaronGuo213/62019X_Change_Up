@@ -28,7 +28,7 @@ INITIALIZE
 void initialize() {
 
     baseControl = *new BaseVelControl(*new PID(1, 1, 0, 0, 0, 0, 0, 0));
-    Odometry tracker = *new Odometry(0, 0, 0);
+    tracker = *new Odometry(0, 0, 0);
     tracker.startTracking();
 
 }

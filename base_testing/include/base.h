@@ -50,6 +50,7 @@ class Odometry {
     double getHeading();
 
 };
+extern Odometry tracker;
 void trackPos(void* param);
 
 //velocity control
