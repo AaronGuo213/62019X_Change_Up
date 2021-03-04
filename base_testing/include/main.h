@@ -63,7 +63,11 @@ using namespace pros;
 #ifdef __cplusplus
 extern "C" {
 #endif
-
+void autonomous(void);
+void initialize(void);
+void disabled(void);
+void competition_initialize(void);
+void opcontrol(void);
 #ifdef __cplusplus
 }
 #endif
@@ -78,13 +82,6 @@ extern "C" {
 #include "pid.h"
 #include "base.h"
 #include "controller.h"
-
-void autonomous(void);
-void initialize(void);
-void disabled(void);
-void competition_initialize(void);
-void opcontrol(void);
-
 #endif
 
 #endif  // _PROS_MAIN_H_

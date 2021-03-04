@@ -1,9 +1,12 @@
 #include "main.h"
 
-//Constants
-const double INCH_PER_REV = 0, INCH_PER_REV_ENC = 0;
+// Constants
+const double INCH_PER_DEG = 0.024815, INCH_PER_DEG_BASE = 0.0287368;
 const double MAX_ACCEL = 0, MAX_VEL = 0; //units of ft and sec
 double startingAngle; //accounts for any shift
+
+// Global Variables
+Odometry tracker = *new Odometry(0, 0, 0);
 
 //Basic Functions
 void runBase(double leftPercent, double rightPercent) {
@@ -26,13 +29,13 @@ void runBase(double percent) {
 
 double getLeftBaseEnc() {
 
-    return (leftBase1.get_position() + leftBase2.get_position()) / 2;
+    return (leftBase1.get_position() + leftBase2.get_position()) / 2 * INCH_PER_DEG_BASE;
 
 }
 
 double getRightBaseEnc() {
 
-    return (rightBase1.get_position() + rightBase2.get_position()) / 2;
+    return (rightBase1.get_position() + rightBase2.get_position()) / 2 * INCH_PER_DEG_BASE;
 
 }
 
@@ -65,19 +68,19 @@ void resetBaseEnc() {
 
 double getLeftEnc() {
 
-    return leftEnc.get_value();
+    return leftEnc.get_value() * INCH_PER_DEG;
 
 }
 
 double getRightEnc() {
 
-    return rightEnc.get_value();
+    return rightEnc.get_value() * INCH_PER_DEG;
 
 }
 
 double getYawEnc() {
 
-    return yawEnc.get_value();
+    return yawEnc.get_value() * INCH_PER_DEG_BASE;
 
 }
 
@@ -91,7 +94,7 @@ double resetEnc() {
 
 double getAngle() {
 
-    return gyro.get_yaw() - startingAngle;
+    return -(gyro.get_yaw() - startingAngle);
 
 }
 
